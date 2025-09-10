@@ -1,0 +1,20 @@
+{
+    "name": "acme-agency/m2-module-patches",
+    "description": "Centralized patch management for Magento 2",
+    "version": "dev-master",
+    "require": {
+        "vaimo/composer-patches": ">5.0"
+    },
+    "extra": {
+        "patches": {
+            "*": {
+                "CVE-2025-54236 (Session Reaper)": {
+                    "source": "patches/CVE-2025-54236.patch",
+                    "depends": {
+                        "magento/framework": "<=104.0.0"
+                    }
+                }
+            }
+        }
+    }
+}

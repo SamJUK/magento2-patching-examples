@@ -1,0 +1,24 @@
+magento2:
+  hosts:
+    client-01:
+      ansible_host: 192.168.1.220
+      ansible_user: root
+      magento_root: "/var/www/vhosts/prod.client1.com/htdocs"
+      fastcgi_sockets:
+        - "/var/run/php/fpm-prod-client1.sock"
+
+    client-02:
+      ansible_host: 192.168.1.221
+      ansible_user: root
+      magento_root: "/var/www/vhosts/prod.client2.com/htdocs"
+      fastcgi_sockets:
+        - "/var/run/php/fpm-prod-client2-store.sock"
+        - "/var/run/php/fpm-prod-client2-blog.sock"
+
+    client-03:
+      ansible_host: 192.168.1.222
+      ansible_user: root
+      magento_root: "/var/www/vhosts/prod.client3.com/htdocs"
+      fastcgi_sockets:
+        - "/var/run/php/fpm-prod-client3.sock"
+

@@ -1,0 +1,24 @@
+- name: Patch Magento2 Stores
+  hosts: all
+  pre_tasks:
+    - name: Ensure Patch File is defined
+      ansible.builtin.assert:
+        that:
+          - patch_file is defined
+        fail_msg: "The variable 'patch_file' must be defined."
+        success_msg: "The variable 'patch_file' is defined."
+
+  tasks:
+    - name: Apply Patch
+      ansible.posix.patch:
+        src: "{{ patch_file }}"
+        basedir: "{{ magento_root }}"
+        strip: 1
+        state: "{{ (revert is defined and revert | bool) | ternary('absent', 'present') }}"
+      register: patch
+
+    - name: Flush OPCache
+      ansible.builtin.command: 
+        cmd: cachetool opcache:reset --fcgi="{{ item }}"
+      loop: "{{ fastcgi_sockets }}"
+      when: fastcgi_sockets is defined and patch.changed

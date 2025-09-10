@@ -1,0 +1,11 @@
+--- a/vendor/magento/framework-amqp/ConfigPool.php
++++ b/vendor/magento/framework-amqp/ConfigPool.php
+@@ -6,7 +6,7 @@
+ namespace Magento\Framework\Amqp;
+ 
+ /**
+- * AMQP connections pool.
++ * AMQP connections pool. -- Test Patch
+  */
+ class ConfigPool
+ {
