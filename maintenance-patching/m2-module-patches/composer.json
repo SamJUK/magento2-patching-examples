@@ -13,6 +13,18 @@
                     "depends": {
                         "magento/framework": "<=104.0.0"
                     }
+                },
+                "CVE-2024-34102 (Cosmicsting) - SanSec StopGap": {
+                    "source": "patches/CVE-2024-34102.stopgap.diff",
+                    "depends": {
+                        "magento/magento2-base": ">=2.4.7 <2.4.7-p2 || >=2.4.6 <2.4.6-p7 || >=2.4.5 <2.4.5-p9 || >=2.4.4 <2.4.4-p10 || >=2.4.3 <2.4.4"
+                    }
+                },
+                "CVE-2024-34102 (Cosmicsting) - Official Patch": {
+                    "source": "patches/CVE-2024-34102.diff",
+                    "depends": {
+                        "magento/framework": ">=103.0.7 <103.0.7-p2 || >=103.0.6 <103.0.6-p7 || >=103.0.5 <103.0.5-p9 || >=103.0.4 <103.0.4-p10 || >=103.0.3 <103.0.4"
+                    }
                 }
             }
         }
