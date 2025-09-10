@@ -25,6 +25,12 @@
                     "depends": {
                         "magento/framework": ">=103.0.7 <103.0.7-p2 || >=103.0.6 <103.0.6-p7 || >=103.0.5 <103.0.5-p9 || >=103.0.4 <103.0.4-p10 || >=103.0.3 <103.0.4"
                     }
+                },
+                "ACSD-67166 (Performance)": {
+                    "source": "patches/ACSD-67166.patch",
+                    "depends": {
+                        "magento/module-inventory-catalog": "<1.3.4"
+                    }
                 }
             }
         }
