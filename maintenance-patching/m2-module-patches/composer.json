@@ -8,6 +8,12 @@
     "extra": {
         "patches": {
             "*": {
+                "CVE-2025-54236 (Session Reaper - File Upload)": {
+                    "source": "patches/CVE-2025-54236-file-upload.diff",
+                    "depends": {
+                        "magento/module-customer": "*"
+                    }
+                },
                 "CVE-2025-54236 (Session Reaper)": {
                     "source": "patches/CVE-2025-54236.patch",
                     "depends": {
