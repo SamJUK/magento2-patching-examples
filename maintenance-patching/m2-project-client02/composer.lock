@@ -57,7 +57,7 @@
             "dist": {
                 "type": "path",
                 "url": "../m2-module-patches",
-                "reference": "aece732cda6b36a5d30a620c9206b7fe86256f37"
+                "reference": "b9e5bdba49134f7cca04298573311d9e18ffe64c"
             },
             "require": {
                 "vaimo/composer-patches": ">5.0"
@@ -66,6 +66,12 @@
             "extra": {
                 "patches": {
                     "*": {
+                        "CVE-2025-54236 (Session Reaper - File Upload)": {
+                            "source": "patches/CVE-2025-54236-file-upload.diff",
+                            "depends": {
+                                "magento/module-customer": "*"
+                            }
+                        },
                         "CVE-2025-54236 (Session Reaper)": {
                             "source": "patches/CVE-2025-54236.patch",
                             "depends": {
